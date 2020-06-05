@@ -45,7 +45,7 @@ test:
 
 about:
   home: https://github.com/dask/dask-image
-  license: BSD 3-Clause
+  license: BSD-3-Clause
   license_file: LICENSE.txt
   summary: Distributed image processing
   doc_url: https://dask-image.readthedocs.io/
