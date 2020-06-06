@@ -1,6 +1,6 @@
 {% set name = "dask-image" %}
-{% set version = "0.2.0" %}
-{% set sha256 = "bece2ea347f963dc0168c7d5fdfd11e51b47d9c857d3bc56144d7c146964a23f" %}
+{% set version = "0.3.0" %}
+{% set sha256 = "603f9ddf59e4c69b8bdafcd5eadc99768160fb05cdcb78d14160c4533cf25b97" %}
 
 package:
   name: {{ name|lower }}
@@ -14,7 +14,7 @@ source:
 build:
   noarch: python
   number: 0
-  script: python -m pip install --no-deps --ignore-installed .
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   build:
