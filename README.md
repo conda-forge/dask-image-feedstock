@@ -5,11 +5,13 @@ Home: https://github.com/dask/dask-image
 
 Package license: BSD-3-Clause
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/dask-image-feedstock/blob/master/LICENSE.txt)
 
 Summary: Distributed image processing
 
+Development: https://github.com/dask/dask-image
 
+Documentation: https://dask-image.readthedocs.io/
 
 Current build status
 ====================
