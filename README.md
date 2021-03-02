@@ -120,4 +120,4 @@ Feedstock Maintainers
 
 * [@GenevieveBuckley](https://github.com/GenevieveBuckley/)
 * [@jakirkham](https://github.com/jakirkham/)
-
+* [@m-albert](https://github.com/m-albert)
