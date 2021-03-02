@@ -13,17 +13,17 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
     - pip
-    - python
+    - python >=3.6
     - setuptools
 
   run:
-    - python
+    - python >=3.6
     - dask >=0.16.1
     - numpy >=1.11.3
     - scipy >=0.19.1
@@ -55,3 +55,4 @@ extra:
   recipe-maintainers:
     - GenevieveBuckley
     - jakirkham
+    - m-albert
