@@ -19,15 +19,16 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python >=3.8
     - setuptools
 
   run:
-    - python >=3.6
-    - dask >=0.16.1
+    - python >=3.8
+    - dask >=2021.10.0
     - numpy >=1.11.3
     - scipy >=0.19.1
     - pims >=0.4.1
+    - tifffile >=2018.10.18
 
 test:
   source_files:
