@@ -1,6 +1,6 @@
 {% set name = "dask-image" %}
-{% set version = "2022.9.0" %}
-{% set sha256 = "f123dfd16a7d15c76662a6ac14778509ed5eed9b494f4322e5945e9b15923547" %}
+{% set version = "2023.3.0" %}
+{% set sha256 = "33aa9c921506d83bc1c36b98e69009172baf6ad0bba305656fa5d6924af3032b" %}
 
 package:
   name: {{ name|lower }}
@@ -19,15 +19,16 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python >=3.8
     - setuptools
 
   run:
-    - python >=3.6
-    - dask >=0.16.1
+    - python >=3.8
+    - dask >=2021.10.0
     - numpy >=1.11.3
     - scipy >=0.19.1
     - pims >=0.4.1
+    - tifffile >=2018.10.18
 
 test:
   source_files:
