@@ -42,6 +42,10 @@ test:
     - pytest >=3.0.5
 
   commands:
+    # Disable newer Arrow strings with dask-image.
+    # xref: https://github.com/dask/dask-image/issues/335
+    - export DASK_DATAFRAME__CONVERT_STRING="False"  # [unix]
+    - set "DASK_DATAFRAME__CONVERT_STRING=False"     # [win]
     - pytest
 
 about:
