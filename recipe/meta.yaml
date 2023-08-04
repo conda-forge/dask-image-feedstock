@@ -1,6 +1,6 @@
 {% set name = "dask-image" %}
-{% set version = "2023.3.0" %}
-{% set sha256 = "33aa9c921506d83bc1c36b98e69009172baf6ad0bba305656fa5d6924af3032b" %}
+{% set version = "2023.8.1" %}
+{% set sha256 = "5e9a8985b0527a1b5942c6a7e744e0e57d264e222c7058f05baeb81c374d04b6" %}
 
 package:
   name: {{ name|lower }}
@@ -19,16 +19,17 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.8
+    - python >=3.9
     - setuptools
 
   run:
-    - python >=3.8
-    - dask >=2021.10.0
-    - numpy >=1.11.3
+    - python >=3.9
+    - dask >=2023.2.0
+    - numpy >=1.18
     - scipy >=0.19.1
     - pims >=0.4.1
     - tifffile >=2018.10.18
+    - pandas >=2.0.0
 
 test:
   source_files:
@@ -39,9 +40,12 @@ test:
 
   requires:
     - pytest >=3.0.5
-    - scikit-image >=0.12.3,<0.17.0
 
   commands:
+    # Disable newer Arrow strings with dask-image.
+    # xref: https://github.com/dask/dask-image/issues/335
+    - export DASK_DATAFRAME__CONVERT_STRING="False"  # [unix]
+    - set "DASK_DATAFRAME__CONVERT_STRING=False"     # [win]
     - pytest
 
 about:
