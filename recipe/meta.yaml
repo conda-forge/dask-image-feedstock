@@ -19,7 +19,9 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.9
+    # hmaarrfk -- 2023/11 The build is not yet compatible with 3.12
+    # but runtime seems to be OK with 3.12
+    - python >=3.9,<3.12
     - setuptools
 
   run:
