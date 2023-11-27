@@ -7,24 +7,30 @@ package:
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
+  patches:
+    # python 3.12 testing compatibility
+    # https://github.com/dask/dask-image/pull/346
+    - 346.patch
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
     - pip
-    - python >=3.9
+    # hmaarrfk -- 2023/11 The build is not yet compatible with 3.12
+    # but runtime seems to be OK with 3.12
+    - python >=3.9,<3.12
     - setuptools
 
   run:
     - python >=3.9
-    - dask >=2023.2.0
+    - dask-core >=2023.2.0
+    - cytoolz >=0.11.0
     - numpy >=1.18
     - scipy >=0.19.1
     - pims >=0.4.1
@@ -34,13 +40,10 @@ requirements:
 test:
   source_files:
     - tests
-
   imports:
     - dask_image
-
   requires:
     - pytest >=3.0.5
-
   commands:
     # Disable newer Arrow strings with dask-image.
     # xref: https://github.com/dask/dask-image/issues/335
