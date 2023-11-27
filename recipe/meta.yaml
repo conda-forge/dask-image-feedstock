@@ -37,13 +37,12 @@ requirements:
 test:
   source_files:
     - tests
-
   imports:
     - dask_image
-
   requires:
     - pytest >=3.0.5
-
+    # hmaarrfk - 2023/11/27 - Test suite still doesn't support python 3.12
+    - python 3.11
   commands:
     # Disable newer Arrow strings with dask-image.
     # xref: https://github.com/dask/dask-image/issues/335
