@@ -13,7 +13,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
@@ -24,7 +24,8 @@ requirements:
 
   run:
     - python >=3.9
-    - dask >=2023.2.0
+    - dask-core >=2023.2.0
+    - cytoolz >=0.11.0
     - numpy >=1.18
     - scipy >=0.19.1
     - pims >=0.4.1
