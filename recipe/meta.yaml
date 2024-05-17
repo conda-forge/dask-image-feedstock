@@ -21,7 +21,6 @@ requirements:
     - pip
     - python >=3.9
     - setuptools
-
   run:
     - python >=3.9
     - dask >=2023.2.0
