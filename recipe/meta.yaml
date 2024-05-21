@@ -1,6 +1,6 @@
 {% set name = "dask-image" %}
-{% set version = "2024.5.0" %}
-{% set sha256 = "14b5b11c0ca096d502b0eea2358602a10231c496ccd545e0ff5ccb099cadb9fe" %}
+{% set version = "2024.5.1" %}
+{% set sha256 = "d14343361878ba0dad6e2a9745fd358eb943c7ed363c1510fc4d545b543999e8" %}
 
 package:
   name: {{ name|lower }}
@@ -13,7 +13,7 @@ source:
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
@@ -43,13 +43,7 @@ test:
     - pytest >=3.0.5
 
   commands:
-    # TODO: Enable `pip check` on next release
-    # xref: https://github.com/conda-forge/dask-image-feedstock/issues/26
-    # - pip check
-    # Disable newer Arrow strings with dask-image.
-    # xref: https://github.com/dask/dask-image/issues/335
-    - export DASK_DATAFRAME__CONVERT_STRING="False"  # [unix]
-    - set "DASK_DATAFRAME__CONVERT_STRING=False"     # [win]
+    - pip check
     - pytest
 
 about:
