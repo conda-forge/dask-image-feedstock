@@ -43,7 +43,9 @@ test:
     - pytest >=3.0.5
 
   commands:
-    - pip check
+    # TODO: Enable `pip check` on next release
+    # xref: https://github.com/conda-forge/dask-image-feedstock/issues/26
+    # - pip check
     # Disable newer Arrow strings with dask-image.
     # xref: https://github.com/dask/dask-image/issues/335
     - export DASK_DATAFRAME__CONVERT_STRING="False"  # [unix]
