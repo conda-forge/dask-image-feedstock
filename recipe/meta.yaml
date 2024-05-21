@@ -1,6 +1,6 @@
 {% set name = "dask-image" %}
-{% set version = "2024.5.1" %}
-{% set sha256 = "d14343361878ba0dad6e2a9745fd358eb943c7ed363c1510fc4d545b543999e8" %}
+{% set version = "2024.5.2" %}
+{% set sha256 = "c83a8819f031ab09cc2f458fd7f7240cb8bd4cf779c90861ec442001a48ede0b" %}
 
 package:
   name: {{ name|lower }}
@@ -23,6 +23,7 @@ requirements:
     - setuptools >=64
     - setuptools_scm >=8
   run:
+    - dask-core >=2024.4.1
     - python >=3.9
     - dask >=2024.4.1
     - numpy >=1.18
