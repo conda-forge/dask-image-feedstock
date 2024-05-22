@@ -23,7 +23,6 @@ requirements:
     - setuptools >=64
     - setuptools_scm >=8
   run:
-    - dask-core >=2024.4.1
     - python >=3.9
     - dask >=2024.4.1
     - numpy >=1.18
