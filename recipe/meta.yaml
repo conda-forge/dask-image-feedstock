@@ -8,22 +8,22 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
     - pip
-    - python >=3.9
+    - python {{ python_min }}
     - setuptools >=64
     - setuptools_scm >=8
   run:
-    - python >=3.9
+    - python >={{ python_min }}
     - dask-core >=2024.4.1
     - dask >=2024.4.1
     - numpy >=1.18
@@ -42,6 +42,7 @@ test:
   requires:
     - pip
     - pytest >=3.0.5
+    - python {{ python_min }}
 
   commands:
     - pip check
