@@ -1,6 +1,6 @@
 {% set name = "dask-image" %}
-{% set version = "2024.5.3" %}
-{% set sha256 = "0c9f1fdf0215800aada7a706ae6d263f5995fe1dbf87b657f797ca1dec48823c" %}
+{% set version = "2025.11.0" %}
+{% set sha256 = "45cf1a9c3a8a1c143c75d43f1494e4fe0827564d3ec6efb93618fb04603ba0b3" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
