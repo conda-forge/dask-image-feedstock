@@ -17,10 +17,11 @@ Current build status
 ====================
 
 
-<table><tr><td>All platforms:</td>
+<table><tr>
+    <td>All platforms:</td>
     <td>
-      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5544&branchName=main">
-        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/dask-image-feedstock?branchName=main">
+      <a href="https://github.com/conda-forge/dask-image-feedstock/actions/workflows/conda-build.yml">
+        <img src="https://github.com/conda-forge/dask-image-feedstock/actions/workflows/conda-build.yml/badge.svg?event=push&branch=main">
       </a>
     </td>
   </tr>
@@ -36,14 +37,14 @@ Current release info
 Installing dask-image
 =====================
 
-Installing `dask-image` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `dask-image` from the `conda-forge/label/dask-image_rc` channel can be achieved by adding `conda-forge/label/dask-image_rc` to your channels with:
 
 ```
-conda config --add channels conda-forge
+conda config --add channels conda-forge/label/dask-image_rc
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `dask-image` can be installed with `conda`:
+Once the `conda-forge/label/dask-image_rc` channel has been enabled, `dask-image` can be installed with `conda`:
 
 ```
 conda install dask-image
@@ -58,26 +59,26 @@ mamba install dask-image
 It is possible to list all of the versions of `dask-image` available on your platform with `conda`:
 
 ```
-conda search dask-image --channel conda-forge
+conda search dask-image --channel conda-forge/label/dask-image_rc
 ```
 
 or with `mamba`:
 
 ```
-mamba search dask-image --channel conda-forge
+mamba search dask-image --channel conda-forge/label/dask-image_rc
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search dask-image --channel conda-forge
+mamba repoquery search dask-image --channel conda-forge/label/dask-image_rc
 
 # List packages depending on `dask-image`:
-mamba repoquery whoneeds dask-image --channel conda-forge
+mamba repoquery whoneeds dask-image --channel conda-forge/label/dask-image_rc
 
 # List dependencies of `dask-image`:
-mamba repoquery depends dask-image --channel conda-forge
+mamba repoquery depends dask-image --channel conda-forge/label/dask-image_rc
 ```
 
 
