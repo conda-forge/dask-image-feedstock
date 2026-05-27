@@ -1,6 +1,6 @@
 {% set name = "dask-image" %}
 {% set version = "2026.5.0rc1" %}
-{% set sha256 = "sha256:05458ebb6674cd7cfdf867a0ef02ce053ea7168f577b3c45e57bbb0073273189" %}
+{% set sha256 = "05458ebb6674cd7cfdf867a0ef02ce053ea7168f577b3c45e57bbb0073273189" %}
 
 package:
   name: {{ name|lower }}
