@@ -29,6 +29,9 @@ requirements:
     - scipy >=1.7.0
     - pims >=0.4.1
     - tifffile >=2020.10.1
+  run_constrained:
+    - pandas >=2.0.0
+    - dask >=2024.4.1
 
 test:
   source_files:
