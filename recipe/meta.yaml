@@ -13,7 +13,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
@@ -28,7 +28,7 @@ requirements:
     - numpy >=1.18
     - scipy >=1.7.0
     - pims >=0.4.1
-    - tifffile >=2018.10.18
+    - tifffile >=2020.10.1
 
 test:
   source_files:
